@@ -9,7 +9,7 @@ class TweetsController < ApplicationController
   end
 
   def create
-    @tweet = TweetsTag.new(tweet_params)
+    @tweet= TweetsTag.new(tweet_params)
     if @tweet.valid?
       @tweet.save
       return redirect_to root_path
@@ -25,8 +25,7 @@ class TweetsController < ApplicationController
   end
 
 
-  private
-
+private
   def tweet_params
     params.require(:tweets_tag).permit(:message, :name)
   end
